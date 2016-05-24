@@ -1,7 +1,6 @@
 package main
 
 import (
-	"errors"
 	"fmt"
 
 	"github.com/hyperledger/fabric/core/chaincode/shim"
@@ -23,7 +22,7 @@ func main() {
 func (t *SimpleChaincode) Init(stub *shim.ChaincodeStub, function string, args []string) ([]byte, error) {
 	fmt.Println("Running init")
 
-	return nil, errors.New("Not implemented")
+	return []byte("Not implemented"), nil
 }
 
 // Invoke updates values
@@ -35,12 +34,12 @@ func (t *SimpleChaincode) Invoke(stub *shim.ChaincodeStub, function string, args
 		return t.Init(stub, "init", args)
 	}
 
-	return nil, errors.New("Not implemented")
+	return []byte("Not implemented"), nil
 }
 
 // Query reads values
 func (t *SimpleChaincode) Query(stub *shim.ChaincodeStub, function string, args []string) ([]byte, error) {
 	fmt.Println("Running query")
 
-	return nil, errors.New("Not implemented")
+	return []byte("Not implemented"), nil
 }
